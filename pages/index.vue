@@ -44,4 +44,5 @@ const searchError = ref(false);
             </div>
         </div>
     </div>
+    <Footer />
 </template>

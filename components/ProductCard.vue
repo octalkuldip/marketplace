@@ -18,8 +18,8 @@ const addToCart = (product) => {
   store.dispatch('addToCart', { product, quantity: 1 });
 };
 
-const removeFromCart = (productId) => {
-  store.dispatch('removeFromCart', productId);
+const removeFromCart = () => {
+  store.dispatch('removeFromCart', );
 };
 
 
@@ -48,7 +48,7 @@ const removeFromCart = (productId) => {
         </span>
       </div>
       <div class="mt-8 p-2 text-center">
-        <NuxtLink @click="addToCart(datilds)" :to="`product/${productid}`"
+        <NuxtLink @click="addToCart(datilds)"
           class="bg-rose-950 hover:bg-white border-2 font-semibold hover:font-bold border-rose-950 hover:text-rose-950 duration-200 text-white py-2 px-16 rounded">
           Add to Cart</NuxtLink>
       </div>
