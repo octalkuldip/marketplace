@@ -2,7 +2,6 @@
 import { ref, defineProps } from 'vue';
 const searchInput = ref('');
 
-const props = defineProps(["searchError"]);
 </script>
 <style></style>
 
@@ -13,14 +12,11 @@ const props = defineProps(["searchError"]);
         <input
           class="border-2 border-rose-950 py-2 px-4 w-full rounded-l-full focus:outline-none placeholder:text-rose-950 font-semibold"
           type="text" placeholder="Search Products..." v-model.lazy="searchInput" />
-        <button class="bg-rose-950 font-semibold text-white py-2.5 px-4 rounded-r-full" type="submit"
+        <button class="bg-rose-950 animate-fade font-semibold text-white py-2.5 px-4 rounded-r-full" type="submit"
           @click="$emit('searchMovie', searchInput)">
           Search
         </button>
       </div>
-      <span v-if="searchError" role="alert" class="text-sm text-red-600 px-4 py-2">
-        field is required
-      </span>
     </div>
   </section>
 </template>

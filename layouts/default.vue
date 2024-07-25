@@ -1,15 +1,14 @@
 <script setup>
 
 </script>
-<style>
-    
-</style>
+<style></style>
 
 <template>
-    <div>
-        <Navbar />
-        <Hero />
-      <slot />
-      
-    </div>
+  <div>
+    <Navbar />
+    <AnnouncementBar />
+    <Hero />
+    <slot />
+
+  </div>
 </template>
