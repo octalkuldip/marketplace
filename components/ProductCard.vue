@@ -1,7 +1,27 @@
 <script setup>
-import { StarIcon } from '@heroicons/vue/24/outline';
+import { useStore } from 'vuex';
+import { ShoppingCartIcon, StarIcon } from '@heroicons/vue/24/outline';
+import { ref } from 'vue'
+
+const rating = ref(3);
+
+const rate = (value) => {
+  rating.value = value;
+};
 
 const props = defineProps(["datilds"]);
+const showStar = ref(false);
+const store = useStore();
+
+const addToCart = (product) => {
+  console.error(store);
+  store.dispatch('addToCart', { product, quantity: 1 });
+};
+
+const removeFromCart = (productId) => {
+  store.dispatch('removeFromCart', productId);
+};
+
 
 </script>
 <style scoped>
@@ -22,24 +42,13 @@ const props = defineProps(["datilds"]);
       <h3 class="font-bold text-lg mb-2 text-center">{{ products.title }}</h3>
       <p class="text-black text-sm mb-4 px-2 font-bold text-center">Price : {{ products.price }}</p>
       <div class="flex ml-2 justify-center cursor-pointer">
-        <span>
-          <StarIcon class="text-rose-950 fill-rose-950 w-5 h-5" />
-        </span>
-        <span>
-          <StarIcon class="text-rose-950 fill-rose-950 w-5 h-5" />
-        </span>
-        <span>
-          <StarIcon class="text-rose-950 w-5 h-5" />
-        </span>
-        <span>
-          <StarIcon class="text-rose-950 w-5 h-5" />
-        </span>
-        <span>
-          <StarIcon class="text-rose-950 w-5 h-5" />
+        <span v-for="(star, index) in 5" :key="index">
+          <StarIcon @click="rate(index + 1)" :class="index < rating ? 'fill-rose-950 transition-all duration-300' : ''"
+            class="text-rose-950 w-5 h-5" />
         </span>
       </div>
       <div class="mt-8 p-2 text-center">
-        <NuxtLink :to="`product/${productid}`"
+        <NuxtLink @click="addToCart(datilds)" :to="`product/${productid}`"
           class="bg-rose-950 hover:bg-white border-2 font-semibold hover:font-bold border-rose-950 hover:text-rose-950 duration-200 text-white py-2 px-16 rounded">
           Add to Cart</NuxtLink>
       </div>

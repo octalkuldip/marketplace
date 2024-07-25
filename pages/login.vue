@@ -27,7 +27,9 @@ const router = useRouter();
 <template>
     <div class="flex h-[100vh] flex-1 flex-col justify-center px-6 py-12 lg:px-8">
       <div class="sm:mx-auto sm:w-full sm:max-w-sm cursor-pointer">
-        <img class="mx-auto w-[140px]" src="https://cdn.vectorstock.com/i/500p/81/25/new-product-corner-label-modern-red-web-vector-34408125.jpg" alt="Your Company" />
+        <img class="rounded-[50%] md:max-w-32 mx-auto max-w-12 object-cover"
+                src="https://png.pngtree.com/template/20191108/ourmid/pngtree-beauty-spa-logo-design-template-woman-silhouette-logo-template-image_328588.jpg"
+                alt="Your Company" />
         <h2 class=" text-center text-2xl font-bold leading-9 tracking-tight text-gray-600">Sign in to your account</h2>
       </div>
   

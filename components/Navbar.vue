@@ -34,7 +34,7 @@
             <span class="absolute -inset-1.5" />
             <span class="sr-only">View notifications</span>
           </button>
-          <a href="#">
+          <a href="#" @click="openSidebarShopindPenel">
             <img src="../public/cart.svg" alt="" class="max-w-[20px]">
           </a>
           <a href="#">
@@ -83,12 +83,23 @@
 
     <DisclosurePanel class="sm:hidden">
       <div class="space-y-1 px-2 pb-3 pt-2">
-        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href"
-          :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']"
-          :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+        <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
       </div>
     </DisclosurePanel>
-  </Disclosure>
+
+    <!-- Sidebar -->
+    <div v-if="isSidebarOpen" class="fixed inset-0 z-50 flex justify-end">
+      <div class="fixed inset-0 bg-black opacity-50" @click="openSidebarShopindPenel"></div>
+      <div class="relative bg-white w-80">
+        <!-- Sidebar content goes here -->
+        <button @click="openSidebarShopindPenel" class="absolute top-0 right-0 m-4">
+          <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+        </button>
+        <p class="p-4 font-semibold">Cart Drawer</p>
+        <ShoppingCart @addToCart="handleAddToCart" />
+      </div>
+    </div>
+ </Disclosure>   
 </template>
 
 <script setup>
@@ -101,4 +112,13 @@ const navigation = [
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
+
+const isSidebarOpen = ref(false);
+  console.log('octal infotech')
+const openSidebarShopindPenel = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
+const handleAddToCart = (product) => {
+  console.log(product ,'this emit log')
+}
 </script>
