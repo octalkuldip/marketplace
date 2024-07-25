@@ -1,6 +1,6 @@
 <script setup>
 const announcements = ref([
-    { text: 'All-NEW Soda and Savory Flavors are now Available!', link: '#' },
+    { text: 'Savory Flavors are now Available!', link: '#' },
     { text: 'Try our new range of healthy snacks!', link: '#' },
     { text: 'Limited-time offer: 20% off on all products!', link: '#' },
 ]);
@@ -9,21 +9,21 @@ const announcements = ref([
 <style></style>
 
 <template>
-    <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true" :effect="'creative'"
+    <Swiper class="w-full bg-black text-white" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true" :effect="'creative'"
         :autoplay="{
             delay: 2000,
             disableOnInteraction: false,
         }" :creative-effect="{
             prev: {
                 shadow: true,
-                translate: ['-20%', 0, -1],
+                translate: ['-100%', 0, -1],
             },
             next: {
                 translate: ['100%', 0, 0],
             },
         }">
-        <SwiperSlide v-for="announcement in announcements" :key="announcement" class="overflow-x-hidden">
-            <a href="#" class="flex justify-center items-center gap-2 w-full bg-black text-white py-2 lg:text-xs">
+        <SwiperSlide v-for="announcement in announcements" :key="announcement">
+            <a href="#" class="flex justify-center items-center gap-2 w-full text-xs p-4">
                 {{ announcement.text }}
                 <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="right"
                     class="icon glyph">

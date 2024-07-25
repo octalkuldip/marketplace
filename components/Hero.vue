@@ -25,7 +25,7 @@ const BannerSliders = ref([
       },
     }">
     <SwiperSlide v-for="BannerSlider in BannerSliders" :key="BannerSlider">
-      <img :src="BannerSlider.img" alt="image" class="w-full lg:h-[50vh] sm:h-[50vh] h-[25vh]">
+      <img :src="BannerSlider.img" alt="image" class="w-full lg:h-[50vh] sm:h-[50vh] h-[25vh] object-cover">
     </SwiperSlide>
   </Swiper>
 </template>
