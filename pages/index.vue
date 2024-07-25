@@ -48,4 +48,5 @@ import { ref } from 'vue';
               </div>
         </div> 
     </div>
+    <Footer />
 </template>
