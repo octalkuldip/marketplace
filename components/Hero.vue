@@ -11,7 +11,8 @@ const BannerSliders = ref([
 <style></style>
 
 <template>
-  <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true" :effect="'creative'"
+  <section>
+    <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true" :effect="'creative'"
     :autoplay="{
       delay: 3000,
       disableOnInteraction: false,
@@ -28,4 +29,5 @@ const BannerSliders = ref([
       <img :src="BannerSlider.img" alt="image" class="w-full lg:h-[50vh] sm:h-[50vh] h-[25vh] object-cover">
     </SwiperSlide>
   </Swiper>
+  </section>
 </template>

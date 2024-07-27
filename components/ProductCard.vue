@@ -9,13 +9,13 @@ const rate = (value) => {
   rating.value = value;
 };
 
-const props = defineProps(["datilds"]);
+const props = defineProps(["product"]);
 const showStar = ref(false);
 const store = useStore();
 
 const addToCart = (product) => {
-  console.error(store);
-  store.dispatch('addToCart', { product, quantity: 1 });
+  console.log(product ,'hello');
+ 
 };
 
 const removeFromCart = () => {
@@ -34,23 +34,22 @@ const removeFromCart = () => {
 }
 </style>
 <template>
-  <div v-for="products in datilds" :key="products" class="rounded-lg overflow-hidden m-4 px-2 max-w-[400px]">
-    <div class="py-4">
+  <div v-for="products in product" :key="products" class="rounded-lg overflow-hidden m-4 px-2 max-w-[400px]">
+    <div class="py-4 border border-[#A4F6BB] p-[15px]">
       <div class="overflow-hidden mb-4">
-        <img class="w-full h-400 object-cover" alt="Placeholder Image" :src="products.poster" />
+        <img class="w-full object-cover" alt="Placeholder Image" src="../public/img/card01.png" />
       </div>
-      <h3 class="font-bold text-lg mb-2 text-center">{{ products.title }}</h3>
-      <p class="text-black text-sm mb-4 px-2 font-bold text-center">Price : {{ products.price }}</p>
-      <div class="flex ml-2 justify-center cursor-pointer">
-        <span v-for="(star, index) in 5" :key="index">
-          <StarIcon @click="rate(index + 1)" :class="index < rating ? 'fill-rose-950 transition-all duration-300' : ''"
-            class="text-rose-950 w-5 h-5" />
-        </span>
-      </div>
-      <div class="mt-8 p-2 text-center">
-        <NuxtLink @click="addToCart(datilds)"
-          class="bg-rose-950 hover:bg-white border-2 font-semibold hover:font-bold border-rose-950 hover:text-rose-950 duration-200 text-white py-2 px-16 rounded">
-          Add to Cart</NuxtLink>
+      <div class="flex flex-col gap-[10px]">
+        <div>
+          <h3 class="font-normal leading-5 py-2 text-sm text-center">{{ products.title }}</h3>
+          <p class="text-black lg:text-[23px] text-sm px-2 font-bold text-center">₹{{ products.price }}</p>
+        </div>
+        <div class="p-2 text-center">
+          <NuxtLink
+            class="bg-[#9BC05B] border-2 cursor-pointer font-semibold hover:font-bold duration-200 text-white py-2 lg:px-16 px-8 rounded-[4px]">
+            QUICK VIEW
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>

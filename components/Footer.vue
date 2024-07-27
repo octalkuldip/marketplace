@@ -48,7 +48,7 @@
                                 <p class="text-sm text-gray-800" style="font-family:sans-serif;">Subscribe for latest updates & offers</p>
                                 <div class="flex">
                                     <input
-                                        class="border-2 border-gray-200 py-1 px-4 w-full *kuldeepbhau placeholder:text-base  focus:outline-none placeholder:text-gray-700 font-normal"
+                                        class="border-2 border-gray-200 py-1 px-4 max-w-xs w-full placeholder:text-base  focus:outline-none placeholder:text-gray-700 font-normal"
                                         type="text" placeholder="Enter Phone Number" />
                                     <button class="bg-[#F77F34] font-semibold text-white py-1 px-4" type="submit">
                                         <svg fill="#FFF" width="16" height="16" viewBox="0 0 15 15"
