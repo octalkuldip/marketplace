@@ -14,4 +14,7 @@
 .page-leave-to {
   filter: grayscale(1);
 }
+.helvetica{
+  font-family: 'helvetica';
+}
 </style>

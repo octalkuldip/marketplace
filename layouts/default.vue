@@ -5,8 +5,9 @@
 
 <template>
   <div>
-    <Navbar />
     <AnnouncementBar />
+    <Navbar />
+    <FoodCategories />
     <Hero />
     <slot />
 

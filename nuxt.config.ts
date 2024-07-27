@@ -9,8 +9,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ['@heroicons/vue'],
   },
-  buildModules: [
-    // other build modules
-  ],
+ 
   components: true, // Ensure components are auto-imported
 })

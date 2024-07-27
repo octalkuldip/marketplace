@@ -40,6 +40,7 @@ const searchError = ref(false);
 <style></style>
 
 <template>
+    <ProductFeatured />
     <div class="mx-auto max-w-[100rem] w-full px-4">
     <!-- <ProductCategories/> -->
     <div class="py-3 lg:px-5">
