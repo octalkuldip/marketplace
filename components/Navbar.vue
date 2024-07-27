@@ -27,7 +27,7 @@
                   {{ navigation[0].name }}
                   <ChevronDownIcon class="inline-block ml-1 h-4 w-4 text-yellow-600" />
                 </NuxtLink>
-                <div v-if="dropdownOpen"  class="absolute  mt-1 w-48 bg-white shadow-lg rounded-md">
+                <div v-if="dropdownOpen"  class="absolute  top-full pt-4 w-48 bg-white shadow-lg rounded-md">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 1</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 2</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 3</a>
