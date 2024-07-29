@@ -5,7 +5,8 @@
                 <div class="flex lg:gap-11 sm:gap-9 gap-4 animate-scroll">
                     <div v-for="item in images" :key="item.id" class="lg:w-20 w-[5rem]  flex-shrink-0">
                         <a :href="item.link">
-                            <img :src="item.src" class="w-full lg:max-w-[36px] sm:max-w-[30px] max-w-[20px] block mx-auto" />
+                            <img :src="item.src"
+                                class="w-full lg:max-w-[36px] sm:max-w-[30px] max-w-[20px] block mx-auto" />
                             <h5
                                 class="mt-[10px] text-center uppercase lg:text-xs sm:text-xs text-[9px] hover:text-brown helvetica font-normal">
                                 {{ item.title }}</h5>
@@ -14,7 +15,8 @@
                     <!-- Duplicate slides for seamless infinite scrolling -->
                     <div v-for="item in images" :key="item.id + '-duplicate'" class="lg:w-20 w-[5rem]  flex-shrink-1">
                         <a :href="item.link">
-                            <img :src="item.src" class="w-full lg:max-w-[36px] sm:max-w-[30px] max-w-[20px] block mx-auto" />
+                            <img :src="item.src"
+                                class="w-full lg:max-w-[36px] sm:max-w-[30px] max-w-[20px] block mx-auto" />
                             <h5
                                 class="mt-[10px] text-center uppercase lg:text-xs sm:text-xs text-[9px] hover:text-brown helvetica font-normal">
                                 {{ item.title }}</h5>

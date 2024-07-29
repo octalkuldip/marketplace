@@ -19,7 +19,7 @@
             <div class="flex items-start gap-[10px]">
               <div class="relative" @mouseenter="toggleDropdown(true)" @mouseleave="toggleDropdown(false)">
                 <NuxtLink :to="navigation[0].href"
-                  class="rounded-md px-[15px] pt-[4px] pb-[7px] text-sm font-normal text-[#A8370E] uppercase">
+                  class="rounded-md px-[15px] pt-[4px] poppins pb-[7px] text-sm font-normal text-[#A8370E] uppercase">
                   {{ navigation[0].name }}
                   <ChevronDownIcon class="inline-block h-4 w-4 text-[#A8370E]" />
                 </NuxtLink>
@@ -34,7 +34,7 @@
                 </div>
               </div>
               <NuxtLink v-for="(item, index) in navigation.slice(1)" :key="item.name" :to="item.href"
-                :class="[item.current ? 'uppercase text-[#A8370E] duration-300 hover:text-[#A8370E] text-sm' : 'text-[#A8370E] text-sm duration-300 hover:text-[#A8370E] uppercase', 'rounded-md px-[15px] pt-[4px] pb-[7px] text-base font-normal']"
+                :class="[item.current ? 'uppercase text-[#A8370E] duration-300 hover:text-[#A8370E] text-sm' : 'text-[#A8370E] text-sm duration-300 hover:text-[#A8370E] uppercase', 'rounded-md px-[15px] poppins pt-[4px] pb-[7px] text-base font-normal']"
                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}</NuxtLink>
             </div>
           </div>
@@ -48,7 +48,7 @@
             <div
               class="flex items-center justify-between gap-2 max-w-[342px] p-3 border-2 rounded-full  border-[#DA5323] w-full">
               <input
-                class="lg:block hidden border-0 w-full focus:outline-none placeholder:text-[#787574] font-normal placeholder:opacity-70 tracking-wide	"
+                class="lg:block hidden border-0 w-full focus:outline-none placeholder:text-[#787574] poppins font-normal placeholder:opacity-70 tracking-wide	"
                 type="text" placeholder="Search Products..." v-model.lazy="searchInput" />
               <button class="md:block hidden right-2 fill-current text-[#A8370F] max-w-[22px] w-full">
                 <img src="../public/SVG/Header-search.svg" alt="">

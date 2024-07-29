@@ -61,9 +61,7 @@ const router = useRouter();
           </div>
   
           <div>
-            <!-- <NuxtLink to="/"> -->
               <button @click="handleSubmitForm()" type="submit" class="flex w-full justify-center rounded-md bg-rose-500 hover:bg-rose-600 text-white px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm">Login</button>
-            <!-- </NuxtLink> -->
           </div>
         </form>
   

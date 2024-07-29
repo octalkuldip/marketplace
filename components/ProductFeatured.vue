@@ -1,7 +1,7 @@
 <template>
   <section class="relative">
     <div
-      class="absolute inset-0 lg:bg-[url('../images/cow.png')] bg-[url('../images/cow2.png')] w-full bg-cover object-cover bg-center opacity-30"> 
+      class="absolute inset-0  w-full bg-cover object-cover bg-center opacity-30"> 
     </div>
     <div class="relative lg:py-[35px] py-[30px]">
       <div
@@ -11,9 +11,9 @@
             <img :src="item.imgSrc" :alt="item.alt" class="w-full lg:max-w-[120px] sm:max-w-[80px] max-w-[50px] mx-auto hover:translate-x-3 hover:-translate-y-3 duration-300">
           </a>
           <a href="#">
-            <h2 class="text-center lg:text-2xl sm:text-xl text-sm  font-bold text-brown">{{ item.title }}</h2>
+            <h2 class="text-center lg:text-2xl sm:text-xl text-sm poppins-bold font-bold text-brown">{{ item.title }}</h2>
           </a>
-          <p class="text-center font-normal lg:text-sm text-xs">{{ item.description }}</p>
+          <p class="text-center font-normal lg:text-sm text-xs poppins">{{ item.description }}</p>
         </div>
       </div>
     </div>
