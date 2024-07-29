@@ -14,7 +14,7 @@ const props = defineProps(["product"]);
 }
 </style>
 <template>
-  <div v-for="products in product" :key="products" class="rounded-lg overflow-hidden m-4 px-2 max-w-[400px]">
+  <div v-for="products in product" :key="products" class="rounded-lg overflow-hidden px-2 max-w-[400px]">
     <div class="py-4 border border-[#A4F6BB] p-[15px]">
       <div class="overflow-hidden mb-4">
         <img class="w-full object-cover" alt="Placeholder Image" src="../public/img/card01.png" />
