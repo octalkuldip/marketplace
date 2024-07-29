@@ -32,8 +32,8 @@ const searchError = ref(false);
     <div class="mx-auto max-w-[92rem] w-full px-4 pt-[50px] pb-[60px]">
     <!-- <ProductCategories/> -->
     <div class="flex flex-col gap-2 mb-[40px]">
-        <h2 class="font-bold lg:text-5xl text-2xl text-[#621E06]">Farm to Home Natural Transformation</h2>
-        <p class="font-bold text-xl">Offers You Can't Refuse</p>
+        <h2 class="font-bold lg:text-5xl poppins-extraBold text-2xl text-[#621E06]">Farm to Home Natural Transformation</h2>
+        <p class="text-xl poppins-bold">Offers You Can't Refuse</p>
     </div>
         <!-- <div class="flex"> -->
             <!-- <ProductCollection /> -->

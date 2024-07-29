@@ -21,12 +21,12 @@ const props = defineProps(["product"]);
       </div>
       <div class="flex flex-col gap-[10px]">
         <div>
-          <h3 class="font-normal leading-5 py-2 text-sm text-center">{{ products.title }}</h3>
-          <p class="text-black lg:text-[23px] text-sm px-2 font-bold text-center">₹{{ products.price }}</p>
+          <h3 class="font-normal leading-5 py-2 text-sm text-center poppins">{{ products.title }}</h3>
+          <p class="text-black lg:text-[23px] text-sm px-2 poppins-extraBold text-center">₹{{ products.price }}</p>
         </div>
         <div class="p-2 text-center">
           <button
-            class="bg-[#9BC05B] border-2 cursor-pointer font-semibold hover:font-bold duration-200 text-white py-2 xl:px-16 px-4  rounded-[4px]">
+            class="bg-[#9BC05B] border-2 cursor-pointer font-semibold poppins-bold duration-200 text-white py-2 xl:px-16 px-4  rounded-[4px]">
             QUICK VIEW
           </button>
         </div>

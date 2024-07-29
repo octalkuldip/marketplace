@@ -6,8 +6,11 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: "page", mode: "out-in" },
   },
+  css: [
+    '~/public/fonts/fonts.css',
+  ],
   build: {
     transpile: ['@heroicons/vue'],
   },
- 
+
 })
