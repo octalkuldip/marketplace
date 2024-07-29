@@ -44,7 +44,7 @@ const searchError = ref(false);
             </div>
         <!-- </div> -->
     </div>
-    <ProductFeatured />
     <OffersCard />
+    <ProductFeatured />
     <Footer />
 </template>
