@@ -1,7 +1,7 @@
 <template>
   <section class="relative">
     <div
-      class="absolute inset-0 lg:bg-[url('../images/cow.png')] bg-[url('../images/cow2.png')] w-full bg-cover object-cover bg-center opacity-30"> 
+      class="absolute inset-0  w-full bg-cover object-cover bg-center opacity-30"> 
     </div>
     <div class="relative lg:py-[35px] py-[30px]">
       <div

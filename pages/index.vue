@@ -56,5 +56,6 @@ const searchError = ref(false);
             </div>
         <!-- </div> -->
     </div>
+    <OffersCard />
     <Footer />
 </template>
