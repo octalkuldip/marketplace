@@ -143,7 +143,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, ShoppingCartIcon, ShoppingBagIcon, ChevronDownIcon, XMarkIcon, UserIcon, HeartIcon } from '@heroicons/vue/24/outline'
 
 const navigation = [
-  { name: 'Brand', href: '/dashboard', current: true },
+  { name: 'Brand', href: '#', current: true },
   { name: 'Shop', href: '#', current: false },
   { name: 'About Edehati', href: '#', current: false },
   { name: 'Our Blogs', href: '#', current: false },

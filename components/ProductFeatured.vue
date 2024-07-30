@@ -1,7 +1,8 @@
 <template>
-  <section class="relative">
+  <section class="relative lg:bg-transparent bg-[#fdf6f2]">
     <div
-      class="absolute inset-0  w-full bg-cover object-cover bg-center opacity-30"> 
+      class="absolute bottom-0  opacity-30 w-full"> 
+      <img src="../public/images/cow.png" alt="cow" class=" lg:h-full h-full  w-full object-cover">
     </div>
     <div class="relative lg:py-[35px] py-[30px]">
       <div
