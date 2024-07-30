@@ -19,7 +19,7 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
-        offerPrice: '150',
+        offerPrice: '120',
         offerDiscountPrice: '220',
     },
     {
@@ -29,7 +29,7 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
-        offerPrice: '150',
+        offerPrice: '130',
         offerDiscountPrice: '220',
     },
     {
@@ -39,14 +39,14 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
-        offerPrice: '150',
+        offerPrice: '140',
         offerDiscountPrice: '220',
     },
 ])
 
 </script>
 <style scoped>
-.strok-price-line::after{
+.strok-price-line::after {
     content: '';
     width: 100%;
     height: 1px;
@@ -60,7 +60,7 @@ const offers = ref([
 
 <template>
     <div class="mx-auto max-w-[92rem] w-full px-4">
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-2 gap-2">
+        <div class="grid lg:grid-cols-4 place-items-center md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-2">
             <div v-for="offer in offers" :key="offer" class="bg-[#FFFFFF] max-w-[317px] w-full  p-4"
                 style="box-shadow: 0px 4px 11px 0px #00000024;">
                 <div>
@@ -93,7 +93,7 @@ const offers = ref([
                         <p class="text-[#621E06] text-lg font-normal"> {{ offer.offer_discription }} </p>
                         <div class="flex items-center justify-between">
                             <p class="text-lg font-bold cursor-pointer">₹ {{ offer.offerPrice }} <span
-                                    class="text-[10px] font-normal cursor-pointer strok-price-line relative text-[#7D7B7B]">₹{{offer.offerDiscountPrice}}</span>
+                                    class="text-[10px] font-normal cursor-pointer strok-price-line relative text-[#7D7B7B]">₹{{ offer.offerDiscountPrice }}</span>
                             </p>
                             <div class="flex justify-between gap-3 cursor-pointer">
                                 <div class="flex">
@@ -109,14 +109,16 @@ const offers = ref([
                                 </div>
                             </div>
                         </div>
-                        <div class="p-2 flex xl:flex-row lg:flex-col md:flex-col flex-col gap-5">
+                        <div class="p-2 flex xl:flex-row lg:flex-col md:flex-col justify-center flex-col gap-2">
                             <button
-                                class="bg-[#9BC05B] border-2 uppercase cursor-pointer font-semibold text-white max-w-[135px] w-full py-1 rounded text-sm">
+                                class="bg-[#9BC05B] border-2 uppercase cursor-pointer font-semibold text-white tracking-wide rounded text-[10px] px-[9px] py-[5px]">
                                 Add to Card
                             </button>
-                            <button class="bg-[#9BC05B] border-2 cursor-pointer font-semibold text-white max-w-[135px] w-full py-1 rounded text-sm">
+                            <button
+                                class="bg-[#9BC05B] border-2 uppercase cursor-pointer font-semibold text-white tracking-wide rounded text-[10px] px-[9px] py-[5px]">
                                 QUICK VIEW
                             </button>
+
                         </div>
                     </div>
                 </div>
