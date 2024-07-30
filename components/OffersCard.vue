@@ -19,7 +19,7 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
-        offerPrice: '150',
+        offerPrice: '120',
         offerDiscountPrice: '220',
     },
     {
@@ -29,7 +29,7 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
-        offerPrice: '150',
+        offerPrice: '130',
         offerDiscountPrice: '220',
     },
     {
@@ -39,7 +39,7 @@ const offers = ref([
         offer_title: 'Barnyard Millet',
         offer_sub_title: 'bestseller',
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
-        offerPrice: '150',
+        offerPrice: '140',
         offerDiscountPrice: '220',
     },
 ])
