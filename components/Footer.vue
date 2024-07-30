@@ -120,7 +120,7 @@ const socials = [
 <template>
     <footer>
         <div>
-            <img src="/public/footer-img.png" alt="footer-img" class="w-full object-cover">
+            <img src="../public/footer-img.png" alt="footer-img" class="w-full object-cover">
         </div>
         <section class="bg-brown -mt-[1px] text-white">
             <div class="max-w-[92rem] mx-auto px-5">
@@ -128,7 +128,7 @@ const socials = [
                     <div class="flex flex-col gap-[13px]">
                         <div class="flex items-center gap-3 lg:flex-row sm:flex-col flex-col justify-between">
                             <a href="#" class="">
-                                <img src="/public/footer-logo.png" alt="" class="lg:max-w-[250px] max-w-[125px] w-full">
+                                <img src="../public/footer-logo.png" alt="" class="lg:max-w-[250px] max-w-[125px] w-full">
                             </a>
                             <div class="flex items-center gap-[27px]">
                                 <div v-for="logo in logos" :key="logo.alt">
@@ -150,13 +150,13 @@ const socials = [
                                 <div class="">
                                     <a href="mailto:edehatifpc@gmail.com"
                                         class="flex items-center gap-[15px] hover:underline">
-                                        <img src="/public/svg/email-icon.svg" alt="" class="w-full max-w-[30px]">
+                                        <img src="../public/svg/email-icon.svg" alt="" class="w-full max-w-[30px]">
                                         <span class="poppins-bold text-[21px]">edehatifpc@gmail.com</span>
                                     </a>
                                 </div>
                                 <div class="">
                                     <a href="#" class="flex items-center gap-[15px] hover:underline">
-                                        <img src="/public/svg/tel-icon.svg" alt="" class="w-full max-w-[30px]">
+                                        <img src="../public/svg/tel-icon.svg" alt="" class="w-full max-w-[30px]">
                                         <span class="poppins-bold text-[21px]">7304303222</span>
                                     </a>
                                 </div>

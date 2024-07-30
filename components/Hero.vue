@@ -15,7 +15,13 @@ const mobileBanners = ref([
 
 
 </script>
-<style></style>
+<style>
+@media (max-width:1024px) {
+  .height-full {
+    height: 300px;
+  }
+}
+</style>
 
 <template>
   <section class="lg:block sm:block hidden">
@@ -34,7 +40,8 @@ const mobileBanners = ref([
       }">
 
       <SwiperSlide v-for="bannerSlider in bannerSliders" :key="bannerSlider">
-        <img :src="bannerSlider.img" alt="image" class="w-full h-[400px] bg-center lg:object-cover">
+        <img :src="bannerSlider.img" alt="image"
+          class="w-full lg:h-[400px] sm:!h-[230px] height-full bg-center lg:object-cover">
       </SwiperSlide>
     </Swiper>
   </section>
