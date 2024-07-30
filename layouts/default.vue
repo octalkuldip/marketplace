@@ -5,8 +5,10 @@
 
 <template>
   <div>
-    <AnnouncementBar />
-    <Navbar />
+    <div class="!sticky top-0 z-10">
+      <AnnouncementBar />
+      <Navbar />
+    </div>
     <FoodCategories />
     <Hero />
     <slot />

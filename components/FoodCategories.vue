@@ -41,6 +41,10 @@ const images = ref([
     { id: 7, src: '/svg/Mask group (5).svg', title: 'Dry Fruits & HONEY', link: '#' },
     { id: 8, src: '/svg/Mask group (7).svg', title: 'Pickle & Jam', link: '#' },
     { id: 9, src: '/svg/Mask group (6).svg', title: 'Sugar & Jaggery', link: '#' },
+    { id: 10, src: '/svg/Mask group (9).svg', title: 'Rural Handcraft', link: '#' },
+    { id: 11, src: '/svg/Mask group (10).svg', title: 'millets grains', link: '#' },
+    { id: 12, src: '/svg/Mask group (11).svg', title: 'more items', link: '#' },
+
 ]);
 </script>
 
