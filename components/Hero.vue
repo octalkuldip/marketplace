@@ -41,7 +41,7 @@ const mobileBanners = ref([
 
       <SwiperSlide v-for="bannerSlider in bannerSliders" :key="bannerSlider">
         <img :src="bannerSlider.img" alt="image"
-          class="w-full lg:h-[400px] sm:!h-[230px] height-full bg-center lg:object-cover">
+          class="w-full lg:h-[400px] sm:h-[230px] height-full bg-center lg:object-cover">
       </SwiperSlide>
     </Swiper>
   </section>

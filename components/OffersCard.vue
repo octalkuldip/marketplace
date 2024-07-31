@@ -1,5 +1,4 @@
 <script setup>
-import { StarIcon, HeartIcon } from '@heroicons/vue/24/solid'
 
 const offers = ref([
     {
@@ -45,6 +44,7 @@ const offers = ref([
 ])
 
 </script>
+
 <style scoped>
 .strok-price-line::after {
     content: '';
@@ -56,42 +56,51 @@ const offers = ref([
     left: 0;
     transform: rotate(20deg);
 }
-</style>
 
+.quick-view-button:hover .quick-view-text {
+    opacity: 0;
+}
+
+.quick-view-button:hover .eye-icon {
+    bottom: 6px;
+}
+
+</style>
 <template>
-    <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-2 gap-2">
-        <div v-for="offer in offers" :key="offer" class="bg-[#FFFFFF] max-w-[317px] w-full  p-4"
+    <div class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 grid-3  lg:gap-[57px] gap-x-[10px] gap-y-6">
+        <div v-for="offer in offers" :key="offer" class="bg-[#FFFFFF] flex flex-col h-full w-full p-4"
             style="box-shadow: 0px 4px 11px 0px #00000024;">
-            <div class="relative">
-                <div class="relative">
-                    <img :src="offer.img" alt="" class="w-full">
-                    <div class="absolute -top-4 -left-1">
-                        <div class="relative flex justify-center items-center">
-                            <img :src="offer.offer_img" alt="offer-image">
-                            <p class="text-white text-[12px] absolute left-2 top-0.5"> {{ offer.offer_discount
-                                }} <span>OFF</span></p>
+            <div class="w-full relative">
+                <img :src="offer.img" alt="" class="w-full lg:max-w-[276px] max-full  object-cover">
+                <div
+                    class="absolute -rotate-90 top-full lg:left-[13.5rem] left-14rem transform origin-top-left  w-full max-full">
+                    <div class="bg-[#FFE6B2] py-[11px] px-[22px] flex flex-row-reverse gap-10 items-center">
+                        <div>
+                            <p class="text-brown helvetica font-semibold text-center text-nowrap">{{ offer.offer_title
+                                }}</p>
+                            <p class="text-[#DA5323] helvetica font-semibold text-center">{{ offer.offer_sub_title }}
+                            </p>
                         </div>
+                        <button
+                            class="bg-[#D6A760] w-full helvetica font-semibold py-1 px-3 lg:text-xl text-white mt-2">1
+                            Kg</button>
                     </div>
                 </div>
-                <div class="bg-[#FFE6B2] max-w-[60px] absolute top-10 right-0 w-full">
-                    <div class="flex flex-col justify-around  items-center">
-                        <div class="flex flex-col -rotate-90">
-                            <p class="text-[#621E06] text-center text-nowrap"> {{ offer.offer_title }} </p>
-                            <p class="text-[#DA5323] text-center"> {{ offer.offer_sub_title }} </p>
-                        </div>
-                        <div>
-                            <button
-                                class="bg-[#D6A760] -rotate-90 max-w-[75px] font-semibold w-full px-2 h-[36px] lg:text-xl leading-7 text-white">1
-                                Kg</button>
-                        </div>
+                <div class="absolute -top-4 -left-1.5">
+                    <div class="flex justify-center items-center">
+                        <img :src="offer.offer_img" alt="offer-image">
+                        <p class="text-white helvetica text-[12px] absolute left-2.5 top-0.5">{{ offer.offer_discount }}
+                            <span>OFF</span>
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="flex flex-col gap-3 w-full p-1">
-                <p class="text-[#621E06] text-lg font-normal"> {{ offer.offer_discription }} </p>
+                <p class="text-[#621E06] text-lg font-normal poppins">{{ offer.offer_discription }}</p>
                 <div class="flex items-center justify-between">
-                    <p class="text-lg font-bold cursor-pointer">₹ {{ offer.offerPrice }} <span
-                            class="text-[10px] font-normal cursor-pointer strok-price-line relative text-[#7D7B7B]">₹{{
+                    <p class="text-lg font-bold poppins-extraBold cursor-pointer">₹ {{ offer.offerPrice }}
+                        <span
+                            class="text-[10px] font-normal poppins cursor-pointer strok-price-line relative text-[#7D7B7B]">₹{{
                                 offer.offerDiscountPrice }}</span>
                     </p>
                     <div class="flex justify-between gap-3 cursor-pointer">
@@ -107,17 +116,24 @@ const offers = ref([
                         </div>
                     </div>
                 </div>
-                <div class="p-2 flex xl:flex-row lg:flex-col md:flex-col flex-col gap-5">
+                
+            </div>
+            <div class="flex mt gap-3 relative justify-center w-full items-center">
                     <button
-                        class="bg-[#9BC05B] border-2 uppercase cursor-pointer font-semibold text-white max-w-[135px] w-full py-1 rounded text-sm">
-                        Add to Card
+                        class="bg-[#9BC05B] quick-view-button poppins-bold flex items-center justify-center uppercase cursor-pointer font-semibold text-white w-full py-2 px-[18px]  rounded text-sm">
+                        <span class="quick-view-text text-sm poppins transition-opacity duration-[.44s] ease-in-out">
+                            Add to Cart</span>
+                        <img class="eye-icon absolute bottom-[-40px] transition-bottom duration-[.44s] ease-in-out max-w-[36px] w-full"
+                            alt="Eye Icon" src="../public/svg/cart-btn.svg" />
                     </button>
                     <button
-                        class="bg-[#9BC05B] border-2 cursor-pointer font-semibold text-white max-w-[135px] w-full py-1 rounded text-sm">
-                        QUICK VIEW
+                        class="w-full quick-view-button flex items-center justify-center bg-[#9BC05B] cursor-pointer font-semibold duration-200 text-white py-2 rounded">
+                        <span class="quick-view-text text-sm poppins transition-opacity duration-200 ease-in-out">QUICK
+                            VIEW</span>
+                        <img class="eye-icon absolute bottom-[-40px] transition-bottom duration-300 ease-in-out max-w-[30px] w-full"
+                            alt="Eye Icon" src="../public/svg/eye.svg" />
                     </button>
                 </div>
-            </div>
         </div>
     </div>
 </template>
