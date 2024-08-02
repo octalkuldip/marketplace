@@ -8,7 +8,7 @@
                 <div class="" v-for="(field, index) in formFields" :key="index">
                     <div v-if="field.type === 'password'" class="relative">
                         <input :type="passwordFieldType" :name="field.name" :placeholder="field.placeholder"
-                            class="w-full lg:py-[15px] py-[13px] lg:px-[25px] px-[15px] border border-[#63463B] focus:outline-none placeholder:text-brown placeholder:opacity-75 text-brown poppins font-semibold placeholder:font-normal rounded-[5px] lg:text-xl text-xs"
+                            class="w-full lg:py-[15px] py-[13px] lg:px-[25px] px-[15px] border border-[#63463B] focus:outline-none focus:ring-brown focus:ring-1 focus:ring-inset placeholder:text-brown placeholder:opacity-75 text-brown poppins font-semibold placeholder:font-normal rounded-[5px] lg:text-xl text-xs"
                             id="myInput" />
                         <button type="button" @click="togglePasswordVisibility"
                             class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
@@ -19,7 +19,7 @@
                     </div>
                     <div v-else class="">
                         <input :type="field.type" :name="field.name" :placeholder="field.placeholder"
-                            class="w-full lg:py-[15px] py-[13px] lg:px-[25px] px-[15px] border border-[#63463B] focus:outline-none placeholder:text-brown placeholder:opacity-75 text-brown poppins font-semibold placeholder:font-normal rounded-[5px] lg:text-xl text-xs"
+                            class="w-full lg:py-[15px] py-[13px] lg:px-[25px] px-[15px] border border-[#63463B] focus:outline-none focus:ring-brown focus:ring-1 focus:ring-inset placeholder:text-brown placeholder:opacity-75 text-brown poppins font-semibold placeholder:font-normal rounded-[5px] lg:text-xl text-xs"
                             id="myInput" />
                     </div>
                 </div>

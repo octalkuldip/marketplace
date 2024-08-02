@@ -1,4 +1,6 @@
 <script setup>
+import OurCustomor from '../components/OurCustomor.vue';
+
 
 </script>
 <style></style>
@@ -31,5 +33,8 @@
     </div>
     <FoodDescription/>
     <FarmerPromoting/>
+    <FollowUs />
+    <Choose />
+    <OurCustomor />
     <Footer />
 </template>
