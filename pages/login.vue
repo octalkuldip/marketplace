@@ -68,8 +68,8 @@ const router = useRouter();
         <p class="mt-10 text-center text-sm text-gray-500">
           Not a member?
           {{ ' ' }}
-          <NuxtLink to="/registration">
-            <a href="#" class="font-semibold leading-6 text-rose-600 hover:text-rose-500">Sign?  your accout</a>
+          <NuxtLink to="/signup">
+            <a href="#" class="font-semibold leading-6 text-rose-600 hover:text-rose-500">Sign? your accout</a>
           </NuxtLink>
         </p>
       </div>

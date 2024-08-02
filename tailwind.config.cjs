@@ -6,6 +6,7 @@ const inlineConfig = {
         "extend": {
             colors: {
                 brown: '#621E06',
+                lightgreen:'#9BC05B',
             },
         }
     }, "plugins": []

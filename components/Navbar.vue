@@ -1,6 +1,6 @@
 <template>
   <Disclosure as="nav" class="bg-white z-10 shadow-lg sticky top-0" v-slot="{ open }">
-    <div class="flex items-center px-4 lg:gap-6 sm:gap-4 gap-2 lg:py-0 py-1">
+    <div class="flex items-center relative px-4 lg:gap-6 gap-2 lg:py-0 py-1">
       <nav class="mx-auto max-w-[90rem] w-full">
         <div class="flex justify-between items-center">
           <div class="items-center lg:hidden flex">
@@ -17,20 +17,37 @@
           </div>
           <div class="lg:block hidden">
             <div class="flex items-start gap-[10px]">
-              <div class="relative" @mouseenter="toggleDropdown(true)" @mouseleave="toggleDropdown(false)">
-                <NuxtLink :to="navigation[0].href"
+              <div class="static" ref="dropdownContainer">
+                <NuxtLink :to="navigation[0].href" @click="toggleDropdown"
                   class="rounded-md flex items-center gap-1 px-[9px] pt-[4px] poppins pb-[7px] text-sm font-normal text-[#A8370E] uppercase">
                   {{ navigation[0].name }}
                   <ChevronDownIcon class="inline-block h-4 w-4 text-[#A8370E]" />
                 </NuxtLink>
-                <div v-if="dropdownOpen" class="absolute  mt-1 w-48 bg-white shadow-lg rounded-md">
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 1</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 2</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 3</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 4</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 5</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 6</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-900 hover:bg-yellow-50">Submenu Item 7</a>
+                <div v-if="dropdownOpen" class="absolute left-0 top-full -mt-[1px] w-full bg-white"
+                  style="box-shadow: 0px 5px 7px 0px #0000001F;">
+                  <div class="max-w-[92rem] mx-auto px-4">
+                    <div class="lg:py-[50px] flex justify-between">
+                      <div class="flex max-w-[263px] w-full justify-between h-full">
+                        <a href="#" class="flex flex-col gap-[10px]" v-for="megamenuIcon in megamenuIcons"
+                          :key="megamenuIcon.text">
+                          <img :src="megamenuIcon.image" alt="img"
+                            class="w-full max-w-[60px] mx-auto hover:scale-110 duration-200">
+                          <span class="poppins text-[22px]">{{ megamenuIcon.text }}</span>
+                        </a>
+                      </div>
+                      <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
+                        :effect="'creative'" :autoplay="{ delay: 3000, disableOnInteraction: false }"
+                        :creative-effect="{ prev: { shadow: true, translate: ['-100%', 0, -1] }, next: { translate: ['100%', 0, 0] } }"
+                        class="max-w-[250px] !m-0">
+                        <SwiperSlide v-for="megamenuSlider in megamenuSliders" :key="megamenuSlider.image"
+                          class="ease-linear">
+                          <a href="#">
+                            <img :src="megamenuSlider.image" alt="img" class="w-full max-w-[250px]">
+                          </a>
+                        </SwiperSlide>
+                      </Swiper>
+                    </div>
+                  </div>
                 </div>
               </div>
               <NuxtLink v-for="(item, index) in navigation.slice(1)" :key="item.name" :to="item.href"
@@ -39,9 +56,9 @@
             </div>
           </div>
           <div class="w-full lg:max-w-[120px] sm:max-w-[91px] max-w-[85px]">
-            <a href="#">
+            <NuxtLink to="/">
               <img src="../public/SVG/Header.svg" alt="" class="">
-            </a>
+            </NuxtLink>
           </div>
           <div class="flex gap-9 justify-end search-w-icon max-w-[538px] lg:w-full">
             <!-- search input -->
@@ -99,8 +116,7 @@
       </nav>
       <div class="block header-main-logo">
         <a href="#">
-          <img src="../public/SVG/header-logo.svg" alt=""
-            class="lg:max-w-[77px] max-w-[48px] w-full lg:mr-[46px]">
+          <img src="../public/SVG/header-logo.svg" alt="" class="lg:max-w-[77px] max-w-[48px] w-full lg:mr-[46px]">
         </a>
       </div>
     </div>
@@ -128,10 +144,12 @@
   .header-main-logo {
     display: none;
   }
-  .search-w-icon{
+
+  .search-w-icon {
     max-width: 425px
   }
 }
+
 @media (max-width:768px) {
   .header-main-logo {
     display: block;
@@ -148,14 +166,39 @@ const navigation = [
   { name: 'About Edehati', href: '#', current: false },
   { name: 'Our Blogs', href: '#', current: false },
 ]
+const megamenuIcons = [
+  { image: 'menu-logo.png', text: 'Him-Ira' },
+  { image: 'menu-logo.png', text: 'Him-Ira' }
+];
+
+const megamenuSliders = [
+  { image: 'menu-slide1.png' },
+  { image: 'menu-slide1.png' },
+  { image: 'menu-slide1.png' }
+
+];
 
 const isSidebarOpen = ref(false);
 const dropdownOpen = ref(false);
-const toggleDropdown = (state) => {
-  dropdownOpen.value = state
-}
 const searchInput = ref('');
-const count = ref(0);
+const dropdownContainer = ref(null);
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value
+}
+const handleClickOutside = (event) => {
+  if (dropdownContainer.value && !dropdownContainer.value.contains(event.target)) {
+    dropdownOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
 const openSidebarShopindPenel = () => {
   isSidebarOpen.value = !isSidebarOpen.value;
 };

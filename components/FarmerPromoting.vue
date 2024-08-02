@@ -49,11 +49,7 @@ const promotings = [
         text: 'Farmers Empowered'
     },
 ];
-const dynamicNumber = ref(0);
 
-const increaseNumber = () => {
-    dynamicNumber.value += 10;
-};
 </script>
 
 <style scoped></style>
