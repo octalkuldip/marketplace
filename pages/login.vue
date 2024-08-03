@@ -1,78 +1,100 @@
 <script setup>
-import { useRouter } from 'vue-router'
-const formError = ref(false);
+import { useRouter } from 'vue-router';
+import { loginSchema } from '../validation/validation';
+
 const router = useRouter();
-  const form = ref({
-    name:'',
-    email:''
-  })
-  const handleSubmitForm = () => {
-    if(form.value.email && form.value.password){
-      router.push('/')
-    }else{
-      formError.value = true;
-      setTimeout(() => {
-        formError.value = false
-      },3000)
-    }
+const form = ref({
+  email: '',
+  password: ''
+});
+
+const validationErrors = ref({
+  email: '',
+  password: ''
+});
+
+const handleSubmitForm = () => {
+  const { error } = loginSchema.validate(form.value, { abortEarly: false });
+  if (error) {
+    error.details.forEach(err => {
+      validationErrors.value[err.context.key] = err.message;
+    });
+  } else {
+    validationErrors.value = { email: '', password: '' };
+    router.push('/');
   }
-  definePageMeta({
-    layout:"custom"
-  });
+};
+const clearError = (field) => {
+  validationErrors.value[field] = '';
+};
+
+
+definePageMeta({
+  layout: "custom"
+});
 </script>
-<style>
-    
-</style>
+
 
 <template>
-    <div class="flex h-[100vh] flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm cursor-pointer">
-        <img class="mx-auto w-[140px]" src="https://cdn.vectorstock.com/i/500p/81/25/new-product-corner-label-modern-red-web-vector-34408125.jpg" alt="Your Company" />
-        <h2 class=" text-center text-2xl font-bold leading-9 tracking-tight text-gray-600">Sign in to your account</h2>
-      </div>
-  
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form @submit.prevent="handleSubmitForm()" class="space-y-6" action="#" method="POST">
+  <!-- Navbar section -->
+  <Navbar />
+  <!-- Login page -->
+  <div class="px-4">
+    <div class="max-w-[698px] mx-auto w-full lg:py-[50px] py-[30px]">
+      <form  @submit.prevent="handleSubmitForm">
+        <div class="flex flex-col lg:gap-[30px] gap-[12px]">
           <div>
-            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-            <div class="mt-2">
-              <input id="email" v-model="form.email" name="email" type="email" autocomplete="email" required="" class="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-600 sm:text-sm sm:leading-6" />
+            <h2 class="text-center lg:text-[45px] text-2xl lg:leading-[67px] lg:pb-0 pb-[3px] tracking-tight text-[#621E06] poppins-bold">
+              Login
+            </h2>
+          </div>
+          <div>
+            <div>
+              <input id="email" v-model="form.email" name="email" type="email" placeholder="Enter your email..."
+                autocomplete="email" @input="clearError('email')"  class="max-w-[698px] lg:placeholder:text-xl placeholder:text-[11px] lg:text-xl text-sm placeholder:font-normal 
+                  poppins lg:px-[25px] py-[11px] px-[15px] lg:py-[15px] w-full rounded-md border-[1px] border-[#63463B] 
+                shadow-sm ring-0 ring-inset  focus:outline-none ring-[#63463B] placeholder:text-brown 
+                  text-brown placeholder:opacity-75 focus:ring-1 focus:ring-inset" />
             </div>
-            <span v-if="formError" class="text-red-600 font-medium text-sm mt-2">
-              email field required
+            <span v-if="validationErrors.email" class="text-red-600  lg:text-base text-sm mt-2">
+              {{ validationErrors.email }}
             </span>
           </div>
-          
+
           <div>
-            <div class="flex items-center justify-between">
-              <label for="password"  class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-              <div class="text-sm">
-                <a href="#" class="font-semibold text-rose-600 hover:text-rose-500">Forgot password?</a>
-              </div>
+            <div>
+              <input id="password" v-model="form.password" name="password" placeholder="Enter your password"
+                type="password" @input="clearError('password')" autocomplete="current-password"  class="max-w-[698px] lg:placeholder:text-xl placeholder:text-[11px] lg:text-xl text-sm placeholder:font-normal poppins 
+                lg:px-[25px] py-[11px] px-[15px] lg:py-[15px] w-full rounded-md border-[1px] border-[#63463B] shadow-sm
+                ring-0 ring-inset  focus:outline-none ring-[#63463B] placeholder:text-brown text-brown placeholder:opacity-75 
+                focus:ring-1 focus:ring-inset" />
             </div>
-            <div class="mt-2">
-              <input id="password" v-model="form.password" name="password" type="password" autocomplete="current-password" required="" class="block p-2 w-full  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-rose-600 sm:text-sm sm:leading-6" />
-            </div>
-            <span v-if="formError" class="text-red-600 font-medium text-sm mt-2">
-              password field required
+            <span v-if="validationErrors.password" class="text-red-600 inline-block !w-full lg:text-base text-sm mt-2">
+              {{ validationErrors.password }}
             </span>
+            <div class="border-b border-[#DA5323] lg:mt-2.5 my-2 inline-block">
+              <h2 class="py-[5px] text-[#DA5323]">
+                <a href="#" class="lg:text-[17px] text-xs capitalize poppins">
+                  forget your password
+                </a>
+              </h2>
+            </div>
           </div>
-  
-          <div>
-            <!-- <NuxtLink to="/"> -->
-              <button @click="handleSubmitForm()" type="submit" class="flex w-full justify-center rounded-md bg-rose-500 hover:bg-rose-600 text-white px-3 py-1.5 text-sm font-semibold leading-6  shadow-sm">Login</button>
-            <!-- </NuxtLink> -->
-          </div>
-        </form>
-  
-        <p class="mt-10 text-center text-sm text-gray-500">
-          Not a member?
-          {{ ' ' }}
-          <NuxtLink to="/registration">
-            <a href="#" class="font-semibold leading-6 text-rose-600 hover:text-rose-500">Sign?  your accout</a>
-          </NuxtLink>
-        </p>
-      </div>
+        </div>
+
+        <div class="max-w-[153px] mx-auto w-full pt-[15px]">
+          <button type="submit"
+            class="w-full mx-auto text-center rounded-[1px] tracking-wider  bg-[#9BC05B] text-white px-[32px] lg:py-[12px] py-[9px] leading-[25px] text-[19px] helvetica font-semibold uppercase">Sign
+            in</button>
+        </div>
+      </form>
+      <NuxtLink to="/signup"
+          class="lg:text-[17px] text-xs lg:max-w-[175px] max-w-[124px] w-full block text-center mx-auto p-[5px] text-[#DA5323] border-b  border-[#DA5323] lg:mt-2.5 my-2 capitalize poppins">Create
+          an
+          account 
+      </NuxtLink>
     </div>
-  </template>
-  
+  </div>
+  <!-- Footer section -->
+  <Footer />
+</template>
