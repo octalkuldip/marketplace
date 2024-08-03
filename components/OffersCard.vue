@@ -69,14 +69,14 @@ const props = defineProps({
                 </p>
                 <div class="flex justify-between gap-3 cursor-pointer">
                     <div class="flex">
-                        <button><img src="../public/SVG/offer-star.svg" alt="" class="bg-transparent"></button>
-                        <button><img src="../public/SVG/offer-star.svg" alt=""></button>
-                        <button><img src="../public/SVG/offer-star.svg" alt=""></button>
-                        <button><img src="../public/SVG/offer-star.svg" alt=""></button>
-                        <button><img src="../public/SVG/offer-half-start.svg" alt=""></button>
+                        <button><img src="../public/svg/offer-star.svg" alt="" class="bg-transparent"></button>
+                        <button><img src="../public/svg/offer-star.svg" alt=""></button>
+                        <button><img src="../public/svg/offer-star.svg" alt=""></button>
+                        <button><img src="../public/svg/offer-star.svg" alt=""></button>
+                        <button><img src="../public/svg/offer-half-start.svg" alt=""></button>
                     </div>
                     <div>
-                        <button><img src="../public/SVG/offer-heart.svg" alt=""></button>
+                        <button><img src="../public/svg/offer-heart.svg" alt=""></button>
                     </div>
                 </div>
             </div>

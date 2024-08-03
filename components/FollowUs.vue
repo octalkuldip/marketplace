@@ -26,7 +26,7 @@ const follows = ref([
                                     <div class="text-2xl flex items-center justify-between">
                                         <div class="flex">
                                             <div>
-                                                <img src="../public/SVG/heart-follow.svg" alt=""
+                                                <img src="../public/svg/heart-follow.svg" alt=""
                                                     class="max-w-[27px] w-full">
                                             </div>
                                             <span class="font-light"> {{ follow.numberFirst }} K</span>
@@ -35,7 +35,7 @@ const follows = ref([
                                     </div>
                                     <div class="flex">
                                         <div>
-                                            <img src="../public/SVG/message-follow.svg" alt=""
+                                            <img src="../public/svg/message-follow.svg" alt=""
                                                 class="max-w-[27px] w-full">
                                         </div>
                                         <span class="font-light"> {{ follow.numberSecound }} K</span>
