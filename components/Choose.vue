@@ -7,22 +7,22 @@
 
 const chooses = [
     {
-        img: 'images/choose-r-01.png',
+        img: 'images/Natural.png',
         title: '100% Natural & Organic',
         details: 'Ensuring purity and quality, our organic products are authentically sourced for your health and well-being.'
     },
     {
-        img: 'images/choose-r-01.png',
+        img: 'images/Natural.png',
         title: 'Pesticides Free',
         details: 'Ensuring purity and quality, our organic products are authentically sourced for your health and well-being.'
     },
     {
-        img: 'images/choose-r-01.png',
+        img: 'images/Natural.png',
         title: 'Chemical Free',
         details: 'Ensuring purity and quality, our organic products are authentically sourced for your health and well-being.'
     },
     {
-        img: 'images/choose-r-01.png',
+        img: 'images/Natural.png',
         title: 'Farm To Home',
         details: 'Ensuring purity and quality, our organic products are authentically sourced for your health and well-being.'
     },
@@ -43,7 +43,7 @@ const chooses = [
         </h1>
         <div class="lg:flex flex-col justify-center lg:items-center py-7 px-3.5">
             <div class="w-full lg:block hidden">
-                <img src="../public/images/choose01.png" alt="" class="h-full lg:max-w-[1287px] lg:w-full">
+                <img src="../public/images/choose-dehati.png" alt="" class="h-full lg:max-w-[1287px] lg:w-full">
             </div>
             <div class="lg:max-w-[640px] lg:absolute lg:w-full lg:right-[12rem] right-0 space-y-4">
                 <div v-for="(choose, index) in chooses" :key="index">

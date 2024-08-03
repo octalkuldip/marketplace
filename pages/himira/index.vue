@@ -10,6 +10,8 @@ const offers = [
         offer_discription: 'Fresh Green Capsicum - Crisp and Flavorful',
         offerPrice: '150',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer02.png',
@@ -20,6 +22,8 @@ const offers = [
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
         offerPrice: '120',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer03.png',
@@ -30,6 +34,8 @@ const offers = [
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
         offerPrice: '130',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer04.png',
@@ -40,6 +46,8 @@ const offers = [
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
         offerPrice: '140',
         offerDiscountPrice: '220',
+        grams: '800g',
+
     },
     {
         img: 'images/offer01.png',
@@ -50,6 +58,8 @@ const offers = [
         offer_discription: 'Fresh Green Capsicum - Crisp and Flavorful',
         offerPrice: '150',
         offerDiscountPrice: '220',
+        grams: '300ml',
+
     },
     {
         img: 'images/offer02.png',
@@ -60,6 +70,8 @@ const offers = [
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
         offerPrice: '120',
         offerDiscountPrice: '220',
+        grams: '250 gm',
+
     },
     {
         img: 'images/offer03.png',
@@ -70,6 +82,8 @@ const offers = [
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
         offerPrice: '130',
         offerDiscountPrice: '220',
+        grams: '200 g',
+
     },
     {
         img: 'images/offer04.png',
@@ -80,6 +94,7 @@ const offers = [
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
         offerPrice: '140',
         offerDiscountPrice: '220',
+        grams: '1 kg',
     },
 ];
 
@@ -102,6 +117,52 @@ const imageMaxWidth = {
 
 };
 const brightness = ref('brightness-50');
+
+
+const products = ref([
+    {
+        title: 'Green Chili Pickle',
+        price: '123',
+        poster: '/images/card01.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '122',
+        poster: '/images/card02.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '169',
+        poster: '/images/card03.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '175',
+        poster: '/images/card04.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '142',
+        poster: '/images/card01.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '115',
+        poster: '/images/card02.png',
+        offerDiscountPrice: '220',
+
+    },
+]);
 </script>
 
 <template>
@@ -127,6 +188,40 @@ const brightness = ref('brightness-50');
         </div>
         <FoodDescription v-for="(FoodDesc, index) in FoodDescs" :key="index" :FoodDesc="FoodDesc"
             :maxWidth="imageMaxWidth" :brightness="brightness" />
+        <div class="mx-auto max-w-[92rem] w-full px-4">
+            <div class="lg:pt-[50px] py-[30px] lg:pb-[60px]">
+                <div class="flex flex-col gap-2 mb-[40px]">
+                    <h2 class="font-bold lg:text-5xl poppins-extraBold text-2xl text-brown">Farm to Home Natural
+                        Transformation</h2>
+                    <p class="text-xl poppins-bold">Offers You Can't Refuse</p>
+                </div>
+                <Swiper :modules="[SwiperAutoplay]" :loop="true" :autoplay="{
+                    delay: 2000,
+                    disableOnInteraction: true,
+                }" :breakpoints="{
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            }">
+                    <SwiperSlide v-for="(product, index) in products" :key="index">
+                        <ProductCard :product="product" />
+                    </SwiperSlide>
+                </Swiper>
+            </div>
+        </div>
     </div>
 </template>
 

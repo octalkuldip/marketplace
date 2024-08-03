@@ -54,7 +54,8 @@
               </div>
               <NuxtLink v-for="(item, index) in navigation.slice(1)" :key="item.name" :to="item.href"
                 :class="[item.current ? 'uppercase text-[#A8370E] duration-300 hover:text-[#A8370E] text-sm' : 'text-[#A8370E] text-sm duration-300 hover:text-[#A8370E] uppercase', 'rounded-md px-[9px] poppins pt-[4px] pb-[7px] text-base font-normal']"
-                :aria-current="item.current ? 'page' : undefined">{{ item.name }}</NuxtLink>
+                :aria-current="item.current ? 'page' : undefined">{{ item.name }}
+                </NuxtLink>
             </div>
           </div>
           <div class="w-full lg:max-w-[120px] sm:max-w-[91px] max-w-[85px]">

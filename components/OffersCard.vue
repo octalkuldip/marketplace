@@ -45,8 +45,9 @@ const props = defineProps({
                             offer.offer_sub_title }}
                         </p>
                     </div>
-                    <button class="bg-[#D6A760] w-full helvetica font-semibold py-1 px-3 lg:text-xl text-white mt-2">1
-                        Kg</button>
+                    <button class="bg-[#D6A760] w-full helvetica font-semibold py-1 px-3 lg:text-xl text-white mt-2">
+                    {{ offer.grams }}
+                    </button>
                 </div>
             </div>
             <div class="absolute -top-4 -left-1.5">

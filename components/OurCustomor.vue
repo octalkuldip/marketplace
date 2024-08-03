@@ -3,27 +3,27 @@ import { ref } from 'vue';
 
 const customors = ref([
   {
-    img: 'images/customor01.png',
+    img: 'images/user.png',
     title: 'Kabir Ravat',
     detail: '"The quality of the organic produce from this site is outstanding. My family and I have never felt healthier!"'
   },
   {
-    img: 'images/customor02.png',
+    img: 'images/user-1.png',
     title: 'Rudar Handa',
     detail: '"The variety of products available is fantastic, and everything is always delivered promptly and in perfect condition."'
   },
   {
-    img: 'images/customor02.png',
+    img: 'images/user-2.png',
     title: 'Rudar Handa',
     detail: '"The variety of products available is fantastic, and everything is always delivered promptly and in perfect condition."'
   },
   {
-    img: 'images/customor02.png',
+    img: 'images/user.png',
     title: 'Rudar Handa',
     detail: '"The variety of products available is fantastic, and everything is always delivered promptly and in perfect condition."'
   },
   {
-    img: 'images/customor03.png',
+    img: 'images/user-2.png',
     title: 'Hari Handa',
     detail: '"The quality of the organic produce from this site is outstanding. My family and I have never felt healthier!"'
   }

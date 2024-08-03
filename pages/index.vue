@@ -10,6 +10,8 @@ const offers = [
         offer_discription: 'Fresh Green Capsicum - Crisp and Flavorful',
         offerPrice: '150',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer02.png',
@@ -20,6 +22,8 @@ const offers = [
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
         offerPrice: '120',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer03.png',
@@ -30,6 +34,8 @@ const offers = [
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
         offerPrice: '130',
         offerDiscountPrice: '220',
+        grams: '1 kg',
+
     },
     {
         img: 'images/offer04.png',
@@ -40,6 +46,8 @@ const offers = [
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
         offerPrice: '140',
         offerDiscountPrice: '220',
+        grams: '800g',
+
     },
     {
         img: 'images/offer01.png',
@@ -50,6 +58,8 @@ const offers = [
         offer_discription: 'Fresh Green Capsicum - Crisp and Flavorful',
         offerPrice: '150',
         offerDiscountPrice: '220',
+        grams: '300ml',
+
     },
     {
         img: 'images/offer02.png',
@@ -60,6 +70,8 @@ const offers = [
         offer_discription: 'Fresh Organic Arbi (Taro Root) - Nutrient-Rich Delight',
         offerPrice: '120',
         offerDiscountPrice: '220',
+        grams: '250 gm',
+
     },
     {
         img: 'images/offer03.png',
@@ -70,6 +82,8 @@ const offers = [
         offer_discription: 'Fresh Green Peas Naturally Delicious and Nutritious',
         offerPrice: '130',
         offerDiscountPrice: '220',
+        grams: '200 g',
+
     },
     {
         img: 'images/offer04.png',
@@ -80,8 +94,10 @@ const offers = [
         offer_discription: 'Fresh Kiwi Box - 800gm Premium Quality',
         offerPrice: '140',
         offerDiscountPrice: '220',
+        grams: '1 kg',
     },
 ];
+
 
 const FoodDescs = [
     {
