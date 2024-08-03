@@ -160,4 +160,3 @@ const imageMaxWidth2 = {
     <OurCustomor />
 </template>
 
-<style></style>

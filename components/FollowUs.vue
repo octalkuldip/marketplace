@@ -1,14 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-// import { HeartIcon, ChatBubbleLeftEllipsisIcon } from '@heroicons/vue/24/solid';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/pagination';
-
-// Import required modules
-import { Pagination, Autoplay } from 'swiper/modules';
-
-
 const follows = ref([
     { img: 'images/followUs01.png', numberFirst: '10.2', numberSecound: '98' },
     { img: 'images/followUs02.png', numberFirst: '10.2', numberSecound: '98' },
@@ -17,8 +8,6 @@ const follows = ref([
 ]);
 </script>
 
-<style scoped></style>
-
 <template>
     <section>
         <div class="max-w-[1606px] w-full mx-auto pt-10">
@@ -26,28 +15,21 @@ const follows = ref([
                 <h1 class="font-bold lg:text-5xl poppins-extraBold text-xl text-brown text-center">
                     Follow Us on Instagram for Updates
                 </h1>
-                <!-- <Swiper :modules="[Pagination,Autoplay]"
-                 :pagination="false"
-                 :loop="true"
-                 :autoplay="{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }"
-                 :slidesPerView="4"
-                 > -->
-                <div class="flex flex-row justify-around gap-2">
-                    <div v-for="(follow, index) in follows" :key="index"
-                        class="relative flex justify-center items-center group">
-                        <img :src="follow.img" alt="Description"
-                            class="transition-opacity duration-700 group-hover:opacity-50 max-w-[348px] w-full h-full object-cover bg-center" />
-                        <div
-                            class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 flex justify-center items-center opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
-                            <div class="text-center text-white flex flex-col gap-8">
-                                <div class="text-2xl flex items-center justify-between">
-                                    <div class="flex">
-                                        <div>
-                                            <img src="../public/SVG/heart-follow.svg" alt=""
-                                                class="max-w-[27px] w-full">
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-3 grid-cols-1 px-[17px]">
+                        <div v-for="(follow, index) in follows" :key="index"
+                            class="relative flex justify-center items-center group">
+                            <img :src="follow.img" alt="Description"
+                                class="transition-opacity duration-700 group-hover:opacity-50 max-w-[348px] w-full h-full object-cover bg-center" />
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-75 flex justify-center items-center opacity-0 transition-opacity duration-1000 group-hover:opacity-100">
+                                <div class="text-center text-white flex flex-col gap-8">
+                                    <div class="text-2xl flex items-center justify-between">
+                                        <div class="flex">
+                                            <div>
+                                                <img src="../public/SVG/heart-follow.svg" alt=""
+                                                    class="max-w-[27px] w-full">
+                                            </div>
+                                            <span class="font-light"> {{ follow.numberFirst }} K</span>
                                         </div>
                                         <span class="font-light"> {{ follow.numberFirst }} K</span>
                                     </div>
@@ -68,8 +50,6 @@ const follows = ref([
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- </Swiper> -->
             </div>
         </div>
     </section>
