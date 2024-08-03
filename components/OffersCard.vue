@@ -39,7 +39,7 @@ const props = defineProps({
                     <div>
                         <p class="text-brown helvetica font-semibold text-center text-nowrap">{{
                             offer.offer_title
-                        }}</p>
+                            }}</p>
                         <p class="text-[#DA5323] helvetica font-semibold text-center">{{
                             offer.offer_sub_title }}
                         </p>
@@ -59,7 +59,7 @@ const props = defineProps({
             </div>
         </div>
         <div class="flex flex-col gap-3 w-full p-1">
-            <p class="text-[#621E06] text-lg font-normal poppins">{{ offer.offer_discription }}</p>
+            <p class="text-brown text-lg font-normal poppins">{{ offer.offer_discription }}</p>
             <div class="flex items-center justify-between">
                 <p class="text-lg font-bold poppins-extraBold cursor-pointer">₹ {{ offer.offerPrice }}
                     <span

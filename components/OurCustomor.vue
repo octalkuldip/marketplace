@@ -5,7 +5,7 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css/pagination';
 
 // Import required modules
-import { Pagination,Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const customors = ref([
   {
@@ -61,19 +61,15 @@ const customors = ref([
     <div class="lg:max-w-[91rem] w-full mx-auto">
       <div class="py-10 max-w-[81rem] mx-auto w-full">
         <h2
-          class="text-[#621E06] lg:text-[45px] md:text-2xl text-sm text-center poppins-bold lg:mb-10 md:mb-5 mb-2 font-bold">
+          class="text-brown lg:text-[45px] md:text-2xl text-sm text-center poppins-bold lg:mb-10 md:mb-5 mb-2 font-bold">
           What Do Our
           Customers Say
         </h2>
         <!-- cart section -->
-        <Swiper :modules="[Pagination,Autoplay]"
-        :pagination="false"  
-        :loop="true"
-        :autoplay="{
+        <Swiper :modules="[Pagination, Autoplay]" :pagination="false" :loop="true" :autoplay="{
           delay: 3000,
           disableOnInteraction: false,
-        }"
-         :centeredSlides="true" :breakpoints="{
+        }" :centeredSlides="true" :breakpoints="{
           640: {
             slidesPerView: 1,
           },
