@@ -1,3 +1,57 @@
+<script setup>
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { ChevronDownIcon, XMarkIcon, } from '@heroicons/vue/24/outline'
+
+const navigation = [
+  { name: 'Brand', href: '#', current: true },
+  { name: 'Shop', href: '#', current: false },
+  { name: 'About Edehati', href: '/about', current: false },
+  { name: 'Our Blogs', href: '#', current: false },
+]
+const megamenuIcons = [
+  { image: 'menu-logo.png', text: 'Him-Ira', link: '/himira' },
+  { image: 'menu-logo.png', text: 'Him-Ira', link: '#' }
+];
+
+const megamenuSliders = [
+  { image: 'menu-slide1.png', link: '#' },
+  { image: 'menu-slide1.png', link: '#' },
+  { image: 'menu-slide1.png', link: '#' }
+
+];
+
+const isSidebarOpen = ref(false);
+const dropdownOpen = ref(false);
+const searchInput = ref('');
+const dropdownContainer = ref(null);
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value
+}
+const closeDropdown = () => {
+  dropdownOpen.value = false;
+};
+const handleClickOutside = (event) => {
+  if (dropdownContainer.value && !dropdownContainer.value.contains(event.target)) {
+    dropdownOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside);
+});
+const openSidebarShopindPenel = () => {
+  isSidebarOpen.value = !isSidebarOpen.value;
+};
+const handleAddToCart = (product) => {
+  console.log(product, 'this emit log')
+}
+</script>
+
 <template>
   <Disclosure as="nav" class="bg-white z-10 shadow-lg sticky top-0" v-slot="{ open }">
     <div class="flex items-center relative px-4 lg:gap-6 gap-2 lg:py-0 py-1">
@@ -30,7 +84,7 @@
                       <div class="flex max-w-[263px] w-full justify-between h-full">
                         <div class="flex flex-col gap-[10px]" v-for="megamenuIcon in megamenuIcons"
                           :key="megamenuIcon.text">
-                          <NuxtLink :to="megamenuIcon.link">
+                          <NuxtLink :to="megamenuIcon.link" @click="closeDropdown">
                             <img :src="megamenuIcon.image" alt="img"
                               class="w-full max-w-[60px] mx-auto hover:scale-110 duration-200">
                             <span class="poppins text-[22px]">{{ megamenuIcon.text }}</span>
@@ -43,7 +97,7 @@
                         class="max-w-[250px] !m-0">
                         <SwiperSlide v-for="megamenuSlider in megamenuSliders" :key="megamenuSlider.image"
                           class="ease-linear">
-                          <a href="#">
+                          <a href="#" @click="closeDropdown">
                             <img :src="megamenuSlider.image" alt="img" class="w-full max-w-[250px]">
                           </a>
                         </SwiperSlide>
@@ -55,7 +109,7 @@
               <NuxtLink v-for="(item, index) in navigation.slice(1)" :key="item.name" :to="item.href"
                 :class="[item.current ? 'uppercase text-[#A8370E] duration-300 hover:text-[#A8370E] text-sm' : 'text-[#A8370E] text-sm duration-300 hover:text-[#A8370E] uppercase', 'rounded-md px-[9px] poppins pt-[4px] pb-[7px] text-base font-normal']"
                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}
-                </NuxtLink>
+              </NuxtLink>
             </div>
           </div>
           <div class="w-full lg:max-w-[120px] sm:max-w-[91px] max-w-[85px]">
@@ -159,53 +213,3 @@
   }
 }
 </style>
-<script setup>
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { Bars3Icon, ShoppingCartIcon, ShoppingBagIcon, ChevronDownIcon, XMarkIcon, UserIcon, HeartIcon } from '@heroicons/vue/24/outline'
-
-const navigation = [
-  { name: 'Brand', href: '#', current: true },
-  { name: 'Shop', href: '#', current: false },
-  { name: 'About Edehati', href: '/about', current: false },
-  { name: 'Our Blogs', href: '#', current: false },
-]
-const megamenuIcons = [
-  { image: 'menu-logo.png', text: 'Him-Ira', link: '/himira' },
-  { image: 'menu-logo.png', text: 'Him-Ira', link: '#' }
-];
-
-const megamenuSliders = [
-  { image: 'menu-slide1.png', link: '#' },
-  { image: 'menu-slide1.png', link: '#' },
-  { image: 'menu-slide1.png', link: '#' }
-
-];
-
-const isSidebarOpen = ref(false);
-const dropdownOpen = ref(false);
-const searchInput = ref('');
-const dropdownContainer = ref(null);
-
-const toggleDropdown = () => {
-  dropdownOpen.value = !dropdownOpen.value
-}
-const handleClickOutside = (event) => {
-  if (dropdownContainer.value && !dropdownContainer.value.contains(event.target)) {
-    dropdownOpen.value = false;
-  }
-};
-
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside);
-});
-
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside);
-});
-const openSidebarShopindPenel = () => {
-  isSidebarOpen.value = !isSidebarOpen.value;
-};
-const handleAddToCart = (product) => {
-  console.log(product, 'this emit log')
-}
-</script>
