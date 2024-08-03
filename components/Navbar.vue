@@ -165,7 +165,7 @@ import { Bars3Icon, ShoppingCartIcon, ShoppingBagIcon, ChevronDownIcon, XMarkIco
 const navigation = [
   { name: 'Brand', href: '#', current: true },
   { name: 'Shop', href: '#', current: false },
-  { name: 'About Edehati', href: '/About', current: false },
+  { name: 'About Edehati', href: '/about', current: false },
   { name: 'Our Blogs', href: '#', current: false },
 ]
 const megamenuIcons = [
