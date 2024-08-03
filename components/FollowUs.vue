@@ -1,14 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-// import { HeartIcon, ChatBubbleLeftEllipsisIcon } from '@heroicons/vue/24/solid';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/pagination';
-
-// Import required modules
-import { Pagination,Autoplay } from 'swiper/modules';
-
-
 const follows = ref([
   { img: 'images/followUs01.png',numberFirst:'10.2',numberSecound:'98' },
   { img: 'images/followUs02.png',numberFirst:'10.2',numberSecound:'98' },
@@ -17,10 +8,6 @@ const follows = ref([
 ]);
 </script>
 
-<style scoped>
-
-</style>
-
 <template>
     <section>
         <div class="max-w-[1606px] w-full mx-auto pt-10">
@@ -28,16 +15,7 @@ const follows = ref([
                 <h1 class="font-bold lg:text-5xl poppins-extraBold text-xl text-[#621E06] text-center">
                     Follow Us on Instagram for Updates
                 </h1>
-                <!-- <Swiper :modules="[Pagination,Autoplay]"
-                 :pagination="false"
-                 :loop="true"
-                 :autoplay="{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                  }"
-                 :slidesPerView="4"
-                 > -->
-                    <div class="flex flex-row justify-around gap-2">
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-3 grid-cols-1 px-[17px]">
                         <div v-for="(follow, index) in follows" :key="index"
                             class="relative flex justify-center items-center group">
                             <img :src="follow.img" alt="Description"
@@ -71,7 +49,6 @@ const follows = ref([
                             </div>
                         </div>
                     </div>
-                <!-- </Swiper> -->
             </div>
         </div>
     </section>

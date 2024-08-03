@@ -148,7 +148,7 @@ const imageMaxWidth2 = {
                 <OffersCard v-for="(offer, index) in offers" :key="index" :offer="offer" />
             </div>
             <div class="text-center">
-                <button class="mt-[40px] py-[5px] px-5 bg-[#809B51] text-white text-xl font-semibold poppins">
+                <button class="mt-[40px] py-[5px]  px-5 bg-[#809B51] text-white text-xl font-semibold poppins">
                     Check All Bestseller
                 </button>
             </div>
@@ -160,4 +160,3 @@ const imageMaxWidth2 = {
     <OurCustomor />
 </template>
 
-<style></style>
