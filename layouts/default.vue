@@ -4,14 +4,13 @@
 <style></style>
 
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <div class="!sticky top-0 z-10">
       <AnnouncementBar />
       <Navbar />
     </div>
     <FoodCategories />
-    <Hero />
     <slot />
-
+    <Footer class="mt-auto"/>
   </div>
 </template>

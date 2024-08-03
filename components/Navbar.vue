@@ -28,12 +28,14 @@
                   <div class="max-w-[92rem] mx-auto px-4">
                     <div class="lg:py-[50px] flex justify-between">
                       <div class="flex max-w-[263px] w-full justify-between h-full">
-                        <a href="#" class="flex flex-col gap-[10px]" v-for="megamenuIcon in megamenuIcons"
+                        <div class="flex flex-col gap-[10px]" v-for="megamenuIcon in megamenuIcons"
                           :key="megamenuIcon.text">
-                          <img :src="megamenuIcon.image" alt="img"
-                            class="w-full max-w-[60px] mx-auto hover:scale-110 duration-200">
-                          <span class="poppins text-[22px]">{{ megamenuIcon.text }}</span>
-                        </a>
+                          <NuxtLink :to="megamenuIcon.link">
+                            <img :src="megamenuIcon.image" alt="img"
+                              class="w-full max-w-[60px] mx-auto hover:scale-110 duration-200">
+                            <span class="poppins text-[22px]">{{ megamenuIcon.text }}</span>
+                          </NuxtLink>
+                        </div>
                       </div>
                       <Swiper :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
                         :effect="'creative'" :autoplay="{ delay: 3000, disableOnInteraction: false }"
@@ -167,14 +169,14 @@ const navigation = [
   { name: 'Our Blogs', href: '#', current: false },
 ]
 const megamenuIcons = [
-  { image: 'menu-logo.png', text: 'Him-Ira' },
-  { image: 'menu-logo.png', text: 'Him-Ira' }
+  { image: 'menu-logo.png', text: 'Him-Ira', link: '/himira' },
+  { image: 'menu-logo.png', text: 'Him-Ira', link: '#' }
 ];
 
 const megamenuSliders = [
-  { image: 'menu-slide1.png' },
-  { image: 'menu-slide1.png' },
-  { image: 'menu-slide1.png' }
+  { image: 'menu-slide1.png', link: '#' },
+  { image: 'menu-slide1.png', link: '#' },
+  { image: 'menu-slide1.png', link: '#' }
 
 ];
 

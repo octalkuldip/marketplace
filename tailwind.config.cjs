@@ -6,14 +6,13 @@ const inlineConfig = {
         "extend": {
             colors: {
                 brown: '#621E06',
-                lightgreen:'#9BC05B',
+                lightgreen: '#9BC05B',
             },
         }
     }, "plugins": []
 };
 
 const config = [
-
 ].reduce((prev, curr) => configMerger(curr, prev), configMerger(inlineConfig, { content: ["/Sunil Sarvaiya/Nuxt js/marketplace/components/**/*.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/components/global/**/*.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/components/**/*.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/layouts/**/*.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/pages/**/*.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/plugins/**/*.{js,ts,mjs}", "/Sunil Sarvaiya/Nuxt js/marketplace/composables/**/*.{js,ts,mjs}", "/Sunil Sarvaiya/Nuxt js/marketplace/utils/**/*.{js,ts,mjs}", "/Sunil Sarvaiya/Nuxt js/marketplace/{A,a}pp.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/{E,e}rror.{vue,js,jsx,mjs,ts,tsx}", "/Sunil Sarvaiya/Nuxt js/marketplace/app.config.{js,ts,mjs}"] }));
 
 module.exports = config
