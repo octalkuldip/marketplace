@@ -107,7 +107,7 @@ const brightness = ref('brightness-50');
 <template>
     <div>
         <Hero />
-        <div class="mx-auto max-w-[92rem] w-full px-4 brightness-50">
+        <div class="mx-auto max-w-[92rem] w-full px-4">
             <div class="lg:pt-[50px] py-[30px] lg:pb-[60px] ">
                 <div class="flex flex-col gap-2 mb-[40px]">
                     <h2 class="font-bold lg:text-5xl poppins-extraBold text-2xl text-[rgb(98,30,6)]">Explore the Him-Ira
