@@ -30,7 +30,8 @@ const props = defineProps({
 </style>
 <template>
 
-    <div class="bg-[#FFFFFF] flex flex-col h-full w-full p-4" style="box-shadow: 0px 4px 11px 0px #00000024;">
+    <div class="bg-[#FFFFFF] flex flex-col h-full w-full p-4 overflow-hidden"
+        style="box-shadow: 0px 4px 11px 0px #00000024;">
         <div class="w-full relative">
             <img :src="offer.img" alt="" class="w-full lg:max-w-[276px] max-full  object-cover">
             <div
@@ -39,7 +40,7 @@ const props = defineProps({
                     <div>
                         <p class="text-brown helvetica font-semibold text-center text-nowrap">{{
                             offer.offer_title
-                            }}</p>
+                        }}</p>
                         <p class="text-[#DA5323] helvetica font-semibold text-center">{{
                             offer.offer_sub_title }}
                         </p>

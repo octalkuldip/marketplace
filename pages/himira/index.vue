@@ -96,17 +96,18 @@ const FoodDescs = [
 ];
 
 const imageMaxWidth = {
-    lg: "134px",
-    sm: "130px",
-    base: "62px"
-};
+    lg: "lg:max-w-[134px]",
+    sm: "sm:max-w-[130px]",
+    base: "max-w-[62px]",
 
+};
+const brightness = ref('brightness-50');
 </script>
 
 <template>
     <div>
         <Hero />
-        <div class="mx-auto max-w-[92rem] w-full px-4">
+        <div class="mx-auto max-w-[92rem] w-full px-4 brightness-50">
             <div class="lg:pt-[50px] py-[30px] lg:pb-[60px] ">
                 <div class="flex flex-col gap-2 mb-[40px]">
                     <h2 class="font-bold lg:text-5xl poppins-extraBold text-2xl text-[rgb(98,30,6)]">Explore the Him-Ira
@@ -125,7 +126,7 @@ const imageMaxWidth = {
             </div>
         </div>
         <FoodDescription v-for="(FoodDesc, index) in FoodDescs" :key="index" :FoodDesc="FoodDesc"
-            :maxWidth="imageMaxWidth" />
+            :maxWidth="imageMaxWidth" :brightness="brightness" />
     </div>
 </template>
 

@@ -8,19 +8,24 @@ const props = defineProps({
     maxWidth: {
         type: String,
         required: true
+    },
+    brightness: {
+        type: String,
+        required: true
     }
 });
 const computedClass = computed(() => {
     return [
-        props.maxWidth.lg ? `lg:max-w-[${props.maxWidth.lg}]` : '',
-        props.maxWidth.sm ? `sm:max-w-[${props.maxWidth.sm}]` : '',
-        props.maxWidth.base ? `max-w-[${props.maxWidth.base}]` : ''
+        props.maxWidth.lg,
+        props.maxWidth.sm,
+        props.maxWidth.base,
     ].join(' ');
 });
 </script>
 <template>
     <section class="lg:py-[50px] py-[30px]  relative">
-        <img :src="FoodDesc.img" alt="img" class="max-w-[556px] w-full absolute right-0 bottom-0 opacity-40">
+        <img :src="FoodDesc.img" alt="img"
+            class="max-w-[556px] w-full absolute right-0 bottom-0 opacity-40" :class="brightness">
         <img :src="FoodDesc.img1" alt="img"
             class="lg:max-w-[276px] max-w-[150px] w-full absolute lg:left-0 sm:left-0 -left-12 lg:-bottom-12 -bottom-7">
         <div class="max-w-[77rem] mx-auto px-4">

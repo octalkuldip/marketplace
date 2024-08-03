@@ -96,10 +96,57 @@ const FoodDescs = [
 ];
 
 const imageMaxWidth2 = {
-    lg: "370px",
-    sm: "340px",
-    base: "218px"
+    lg: "lg:max-w-[370px]",
+    sm: "sm:max-w-[340px]",
+    base: "max-w-[218px]"
 };
+
+
+const products = ref([
+    {
+        title: 'Green Chili Pickle',
+        price: '123',
+        poster: '/images/card01.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '122',
+        poster: '/images/card02.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '169',
+        poster: '/images/card03.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '175',
+        poster: '/images/card04.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '142',
+        poster: '/images/card01.png',
+        offerDiscountPrice: '220',
+
+    },
+    {
+        title: 'Batman movie city',
+        price: '115',
+        poster: '/images/card02.png',
+        offerDiscountPrice: '220',
+
+    },
+]);
+
 </script>
 
 <template>
@@ -111,7 +158,31 @@ const imageMaxWidth2 = {
                     Transformation</h2>
                 <p class="text-xl poppins-bold">Offers You Can't Refuse</p>
             </div>
-            <ProductCard />
+            <Swiper :modules="[SwiperAutoplay]" :loop="true" :autoplay="{
+                delay: 2000,
+                disableOnInteraction: true,
+            }" :breakpoints="{
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1280: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            }">
+                <SwiperSlide v-for="(product, index) in products" :key="index">
+                    <ProductCard :product="product" />
+                </SwiperSlide>
+            </Swiper>
         </div>
     </div>
     <ProductFeatured />
@@ -159,4 +230,3 @@ const imageMaxWidth2 = {
     <FollowUs />
     <OurCustomor />
 </template>
-
