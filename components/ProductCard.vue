@@ -46,7 +46,7 @@ const props = defineProps({
 
 <template>
 
-  <div class="border border-[#A4F6BB] p-4 max-w-[297px] w-full">
+  <div class="border border-[#A4F6BB] lg:p-4 p-[10px] max-w-[297px] w-full">
     <div class="mb-4">
       <img class="w-full object-cover rounded-lg h-auto" alt="Product Image" :src="product.poster" />
     </div>

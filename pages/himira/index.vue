@@ -1,6 +1,6 @@
 <script setup>
 
-const offers = [
+const offers = ref([
     {
         img: 'images/offer01.png',
         offer_img: 'images/Rate-Discound.png',
@@ -96,9 +96,9 @@ const offers = [
         offerDiscountPrice: '220',
         grams: '1 kg',
     },
-];
+]);
 
-const FoodDescs = [
+const FoodDescs = ref([
     {
         img: 'images/wheat-2.png',
         img1: 'images/rice3.png',
@@ -108,7 +108,7 @@ const FoodDescs = [
         description1: 'Him-ira offers handcrafted products blending Himalayan culture with modern utility, reflecting rich heritage.',
         lastTitle: ' “ Celebrating Tradition Through Artisanal Excellence Handcrafted Himalayan Creations for Everyday Life “',
     }
-];
+]);
 
 const imageMaxWidth = {
     lg: "lg:max-w-[134px]",
@@ -169,7 +169,7 @@ const products = ref([
     <div>
         <Hero />
         <div class="mx-auto max-w-[92rem] w-full px-4">
-            <div class="lg:pt-[50px] py-[30px] lg:pb-[60px] ">
+            <div class="lg:py-[50px] py-[30px]">
                 <div class="flex flex-col gap-2 mb-[40px]">
                     <h2 class="font-bold lg:text-5xl poppins-extraBold text-2xl text-[rgb(98,30,6)]">Explore the Him-Ira
                         Collection</h2>
@@ -199,23 +199,31 @@ const products = ref([
                     delay: 2000,
                     disableOnInteraction: true,
                 }" :breakpoints="{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 30,
-                },
-                1280: {
-                    slidesPerView: 4,
-                    spaceBetween: 40,
-                },
-            }">
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                    },
+                    375: {
+                        slidesPerView: 2,
+                        spaceBetween: 5,
+                    },
+                    425: {
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 15,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                    1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                }">
                     <SwiperSlide v-for="(product, index) in products" :key="index">
                         <ProductCard :product="product" />
                     </SwiperSlide>

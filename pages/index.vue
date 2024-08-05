@@ -1,6 +1,6 @@
 <script setup>
 
-const offers = [
+const offers = ref([
     {
         img: 'images/offer01.png',
         offer_img: 'images/Rate-Discound.png',
@@ -96,10 +96,10 @@ const offers = [
         offerDiscountPrice: '220',
         grams: '1 kg',
     },
-];
+]);
 
 
-const FoodDescs = [
+const FoodDescs = ref([
     {
         img: 'images/wheat.png',
         img1: 'images/windmill.png',
@@ -109,7 +109,7 @@ const FoodDescs = [
         description1: 'eDehati ensures the highest quality natural foods by adhering to certified organic farming practices. Choose eDehati for authentic, sustainable, and organic food products that prioritize your health and the environment',
         lastTitle: '“The integrity and credibility we have gained in the market is thetestimony to the authenticity of our products.”',
     }
-];
+]);
 
 const imageMaxWidth2 = {
     lg: "lg:max-w-[370px]",
@@ -178,13 +178,21 @@ const products = ref([
                 delay: 2000,
                 disableOnInteraction: true,
             }" :breakpoints="{
-                640: {
+                320: {
                     slidesPerView: 1,
-                    spaceBetween: 0,
+                    spaceBetween: 15,
+                },
+                375: {
+                    slidesPerView: 2,
+                    spaceBetween: 5,
+                },
+                425: {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
                 },
                 768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                    slidesPerView: 3,
+                    spaceBetween: 15,
                 },
                 1024: {
                     slidesPerView: 3,

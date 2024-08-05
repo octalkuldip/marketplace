@@ -1,8 +1,8 @@
 <template>
-    <section class="py-4">
+    <section class="py-[10px]">
         <div class="container max-w-[67rem] mx-auto">
             <div class="flex w-full overflow-hidden">
-                <div class="flex lg:gap-11 sm:gap-9 gap-4 animate-scroll">
+                <div class="flex lg:gap-11 items-center sm:gap-9 gap-4 animate-scroll">
                     <div v-for="item in images" :key="item.id" class="lg:w-20 w-[5rem]  flex-shrink-0">
                         <a :href="item.link">
                             <img :src="item.src"

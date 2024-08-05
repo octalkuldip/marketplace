@@ -6,7 +6,7 @@ const navigation = [
   { name: 'Brand', href: '#', current: true },
   { name: 'Shop', href: '#', current: false },
   { name: 'About Edehati', href: '/about', current: false },
-  { name: 'Our Blogs', href: '#', current: false },
+  { name: 'Our Blogs', href: '/blogs', current: false },
 ]
 const megamenuIcons = [
   { image: 'menu-logo.png', text: 'Him-Ira', link: '/himira' },

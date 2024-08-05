@@ -1,7 +1,7 @@
 <template>
   <section class="relative lg:bg-transparent bg-[#fdf6f2]">
     <div
-      class="absolute bottom-0  opacity-30 w-full"> 
+      class="absolute bottom-0 opacity-30 w-full"> 
       <img src="../public/images/cow.png" alt="cow" class=" lg:h-full h-full  w-full object-cover">
     </div>
     <div class="relative lg:py-[35px] py-[30px]">
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-const featuredItems = [
+const featuredItems = ref([
   {
     imgSrc: '/images/featured1.png',
     alt: 'Authenticity',
@@ -47,7 +47,7 @@ const featuredItems = [
     title: 'Purpose',
     description: 'Ensuring purity and quality, our organic products are authentically sourced for your health and well-being.'
   }
-];
+]);
 </script>
 
 <style scoped></style>

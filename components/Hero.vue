@@ -1,5 +1,4 @@
 <script setup>
-
 const bannerSliders = ref([
   { img: '/home1.png' },
   { img: '/home2.png' },
@@ -10,9 +9,7 @@ const mobileBanners = ref([
   { img: '/home5.png' },
   { img: '/home6.png' },
   { img: '/home8.png' },
-
 ]);
-
 
 </script>
 <style>
@@ -38,7 +35,6 @@ const mobileBanners = ref([
           translate: ['100%', 0, 0],
         },
       }">
-
       <SwiperSlide v-for="bannerSlider in bannerSliders" :key="bannerSlider">
         <img :src="bannerSlider.img" alt="image"
           class="w-full lg:h-[400px] sm:h-[230px] height-full bg-center lg:object-cover">
@@ -59,7 +55,6 @@ const mobileBanners = ref([
           translate: ['100%', 0, 0],
         },
       }">
-
       <SwiperSlide v-for="mobileBanner in mobileBanners" :key="mobileBanner">
         <img :src="mobileBanner.img" alt="image" class="w-full lg:h-full sm:h-full h-[338px] bg-center lg:object-cover">
       </SwiperSlide>
